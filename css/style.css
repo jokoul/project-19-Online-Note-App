@@ -1,0 +1,121 @@
+/*GENERAL STYLE*/
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  position: relative; /*Needed to use position absolute on footer properly*/
+  min-height: 100%; /*same comment as above*/
+}
+body {
+  font-family: Arvo, serif;
+}
+.green {
+  background-color: rgba(120, 200, 0, 0.7);
+}
+
+/*NAVBAR STYLE*/
+.navbar {
+  background-color: #62abcfe9;
+  border: 2px solid #499cc7;
+  color: white;
+}
+.navbar-brand,
+.navbar-light .navbar-toggler,
+.navbar-toggler-icon,
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.967) !important;
+  border-color: white !important;
+}
+.nav-item .active {
+  background-color: #499cc7;
+}
+.navbar-light .navbar-nav .nav-link:hover {
+  color: rgba(255, 255, 255, 0.633) !important;
+}
+/* =============================HOME STYLE START================================================================*/
+.homeBody {
+  background: url("../img/notepad-1276779_960_720.webp") no-repeat center center; /*shortcut for background position / repeat */
+  background-attachment: fixed; /*to fix image on scroll*/
+  background-size: cover; /*to make the image cover all the background*/
+}
+.jumbotron {
+  margin-top: 10rem;
+  margin-bottom: 20rem;
+  background-color: rgba(255, 255, 255, 0.758);
+  border-radius: 2rem;
+  padding: 2rem;
+  letter-spacing: 2px;
+}
+.signup {
+  border-radius: 0.5rem;
+}
+.signup:hover {
+  background-color: rgb(120, 200, 0);
+}
+/*FOOTER*/
+.footer {
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(#62aacf, #62aacf);
+  background: -webkit-linear-gradient(#62aacf, #62aacf);
+  background: -moz-linear-gradient(#62aacf, #62aacf);
+  background: -o-linear-gradient(#62aacf, #62aacf);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-top: 3rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.footer p {
+  font-size: 1.2rem;
+  color: white;
+  text-align: center;
+}
+footer div {
+  margin-left: 2rem;
+}
+.footer p a {
+  text-decoration: none;
+  color: white;
+}
+.footer p a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.footer ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #5d12e7 !important;
+  margin-bottom: 1rem;
+}
+.footer ul li a {
+  color: white;
+}
+.footer ul li {
+  transition: all 0.2s;
+  list-style-type: none;
+}
+.footer ul li:hover {
+  transform: scale(1.3);
+}
+@media screen and (max-width: 450px) {
+  .footer {
+    flex-direction: column-reverse;
+  }
+  footer div {
+    margin-left: 0;
+    margin-bottom: 2rem;
+  }
+}
+/* =============================HOME STYLE START================================================================*/
+/*=========================MAINPAGE STYLE START===============================================*/
+.mainBody {
+  background: url("../img/computer-gec91e89fb_1920.jpg"); /*shortcut for background position / repeat */
+  background-attachment: fixed; /*to fix image on scroll*/
+  background-size: cover; /*to make the image cover all the background*/
+}

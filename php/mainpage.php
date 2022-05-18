@@ -7,9 +7,9 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!--style-->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <!--favicon-->
-    <link rel="shortcut icon" type="image/png"  href="./img/favicon_io/logo-makr.png"/>
+    <link rel="shortcut icon" type="image/png"  href="../img/favicon_io/logo-makr.png"/>
     <!--GOOGLE FONTS ARVO-->
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,9 +20,9 @@
       crossorigin="anonymous"
     ></script>
 
-    <title>Online-Note-App</title>
+    <title>My notes</title>
   </head>
-  <body class="homeBody">
+  <body class="mainBody">
       <!--NAVIGATION-->
       <nav role="navigation" class="navbar navbar-expand-md navbar-light fixed-top">
           <div class="container-fluid">
@@ -32,23 +32,29 @@
                  </button>
             <div class="navbar-collapse colapse d-md-flex justify-content-between mt-2" id="navbarSupportedContent">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Help</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">My Notes</a></li>
                 </ul>
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#loginModal" data-bs-toggle="modal">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" >Logged in as <b>username</b></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" >Log out</a></li>
                 </ul>
             </div>
           </div>
       </nav>
     
-    <!--JUMBOTRON-->
-    <div class="jumbotron d-flex flex-column justify-content-center align-items-center offset-2 col-8 text-center" id="myContainer">
-    <h1>Online Notes App</h1>
-    <p>Your Notes with you wherever you go. <br> Easy to use, protects all your notes!</p>
-    <button type="button" class="btn btn-lg signup green" data-bs-toggle="modal" data-bs-target="#signupModal">Sign up It's free</button>
+    <!--CONTAINER-->
+    <div class="mainContainer">
+    <div class="row">
+        <div class=" offset-md-3 col-6">
+            <div>
+                <button type="button" id="addNote" class="btn">Add Note</button>
+            </div>
+        </div>
     </div>
+    </div>    
 
     <!--LOGIN FORM-->
     <form id="loginform" action="indes.php" method="POST">
