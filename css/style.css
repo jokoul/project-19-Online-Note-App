@@ -11,7 +11,14 @@ body {
   font-family: Arvo, serif;
 }
 .green {
-  background-color: rgba(120, 200, 0, 0.7);
+  background-color: rgba(120, 200, 0, 0.835);
+}
+.btn {
+  color: white;
+}
+.btn:hover {
+  color: white;
+  background-color: #499cc7;
 }
 
 /*NAVBAR STYLE*/
@@ -118,4 +125,26 @@ footer div {
   background: url("../img/computer-gec91e89fb_1920.jpg"); /*shortcut for background position / repeat */
   background-attachment: fixed; /*to fix image on scroll*/
   background-size: cover; /*to make the image cover all the background*/
+}
+#mainContainer {
+  margin-top: 10rem;
+}
+.doneBtn:hover {
+  background-color: rgb(120, 200, 0);
+}
+#allNotes,
+#done,
+#notePad {
+  display: none;
+}
+textarea {
+  width: 100%;
+  max-width: 100%;
+  font-size: 1.1rem;
+  line-height: 1.5em;
+  border-left-width: 1rem;
+  border-color: #8c119a;
+  color: #8c119a;
+  background-color: azure;
+  padding: 0.5rem;
 }

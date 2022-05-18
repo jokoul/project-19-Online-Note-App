@@ -26,7 +26,7 @@
       <!--NAVIGATION-->
       <nav role="navigation" class="navbar navbar-expand-md navbar-light fixed-top">
           <div class="container-fluid">
-                <a class="navbar-brand" href="#">Online Notes</a>
+                <a class="navbar-brand" href="">Online Notes</a>
                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                      <span class="navbar-toggler-icon"></span>
                  </button>
@@ -39,18 +39,32 @@
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="#" >Logged in as <b>username</b></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" >Log out</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.php" >Log out</a></li>
                 </ul>
             </div>
           </div>
       </nav>
     
     <!--CONTAINER-->
-    <div class="mainContainer">
+    <div class="container" id="mainContainer">
     <div class="row">
-        <div class=" offset-md-3 col-6">
-            <div>
-                <button type="button" id="addNote" class="btn">Add Note</button>
+        <div class=" offset-md-2 col-md-8 col-12">
+            <div class="d-flex justify-content-between mb-3">
+                <div>
+                    <button type="button" id="addNote" class="btn btn-lg btn-info">Add Note</button>
+                    <button type="button" id="allNotes" class="btn btn-lg btn-info">All Notes</button>
+                </div>
+                <div>
+
+                    <button type="button" id="done" class="btn btn-lg green doneBtn">Done</button>
+                    <button type="button" id="edit" class="btn btn-lg btn-info">Edit</button>
+                </div>
+            </div>
+            <div id="notePad" class="mb-3">
+                <textarea rows="10"></textarea>
+            </div>
+            <div id="notes" class="notes">
+                <!--AJAX call to a php file to populate note div with notes-->
             </div>
         </div>
     </div>
