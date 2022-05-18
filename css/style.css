@@ -13,12 +13,14 @@ body {
 .green {
   background-color: rgba(120, 200, 0, 0.835);
 }
+.green:hover {
+  background-color: rgb(120, 200, 0);
+}
 .btn {
   color: white;
 }
 .btn:hover {
   color: white;
-  background-color: #499cc7;
 }
 
 /*NAVBAR STYLE*/
@@ -56,9 +58,11 @@ body {
 }
 .signup {
   border-radius: 0.5rem;
+  transition: all 0.5s ease;
 }
 .signup:hover {
   background-color: rgb(120, 200, 0);
+  transform: scale(1.1);
 }
 /*FOOTER*/
 .footer {
@@ -119,15 +123,19 @@ footer div {
     margin-bottom: 2rem;
   }
 }
-/* =============================HOME STYLE START================================================================*/
+/* =============================HOME STYLE END================================================================*/
 /*=========================MAINPAGE STYLE START===============================================*/
 .mainBody {
   background: url("../img/computer-gec91e89fb_1920.jpg"); /*shortcut for background position / repeat */
   background-attachment: fixed; /*to fix image on scroll*/
   background-size: cover; /*to make the image cover all the background*/
 }
-#mainContainer {
+.allContainer {
   margin-top: 10rem;
+}
+.buttons .btn:hover {
+  color: white;
+  background-color: #499cc7;
 }
 .doneBtn:hover {
   background-color: rgb(120, 200, 0);
@@ -148,3 +156,17 @@ textarea {
   background-color: azure;
   padding: 0.5rem;
 }
+/*=========================MAINPAGE STYLE END===============================================*/
+/*=========================PROFILE PAGE STYLE START===============================================*/
+.profileBody {
+  background: url("../img/sticky-notes-g2c30bbf89_1280.jpg"); /*shortcut for background position / repeat */
+  background-attachment: fixed; /*to fix image on scroll*/
+  background-size: cover; /*to make the image cover all the background*/
+}
+.profile {
+  background-color: whitesmoke;
+}
+.profile .table tr:hover {
+  cursor: pointer;
+}
+/*=========================PROFILE PAGE STYLE END===============================================*/

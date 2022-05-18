@@ -20,9 +20,9 @@
       crossorigin="anonymous"
     ></script>
 
-    <title>My notes</title>
+    <title>Profiles</title>
   </head>
-  <body class="mainBody">
+  <body class="profileBody">
       <!--NAVIGATION-->
       <nav role="navigation" class="navbar navbar-expand-md navbar-light fixed-top">
           <div class="container-fluid">
@@ -32,10 +32,10 @@
                  </button>
             <div class="navbar-collapse colapse d-md-flex justify-content-between mt-2" id="navbarSupportedContent">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./profile.php">Profile</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Help</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#">My Notes</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="./mainpage.php">My Notes</a></li>
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="#" >Logged in as <b>username</b></a></li>
@@ -45,137 +45,119 @@
           </div>
       </nav>
     
-    <!--CONTAINER-->
-    <div class="container" id="mainContainer">
-    <div class="row">
-        <div class=" offset-md-2 col-md-8 col-12">
-            <div class="d-flex justify-content-between mb-3">
-                <div>
-                    <button type="button" id="addNote" class="btn btn-lg btn-info">Add Note</button>
-                    <button type="button" id="allNotes" class="btn btn-lg btn-info">All Notes</button>
-                </div>
-                <div>
-
-                    <button type="button" id="done" class="btn btn-lg green doneBtn">Done</button>
-                    <button type="button" id="edit" class="btn btn-lg btn-info">Edit</button>
-                </div>
-            </div>
-            <div id="notePad" class="mb-3">
-                <textarea rows="10"></textarea>
-            </div>
-            <div id="notes" class="notes">
-                <!--AJAX call to a php file to populate note div with notes-->
-            </div>
+    
+    <div class="table-responsive container allContainer">
+        <div class="row">
+        <div class="profile offset-md-2 col-md-8 col-12 p-3 rounded">  
+            <h1>General Account Settings</h1>
+            <table class="table table-hover table-condensed table-bordered">
+                <tr data-bs-target="#updateUsername" data-bs-toggle="modal">
+                    <td>Username</td>
+                    <td>Value</td>
+                </tr>
+                <tr data-bs-target="#updateEmail" data-bs-toggle="modal">
+                    <td>Email</td>
+                    <td>Value</td>
+                </tr>
+                <tr data-bs-target="#updatePassword" data-bs-toggle="modal">
+                    <td>Password</td>
+                    <td>hidden</td>
+                </tr>
+            </table>
         </div>
     </div>
-    </div>    
+    </div>
+    
 
-    <!--LOGIN FORM-->
-    <form id="loginform" action="indes.php" method="POST">
-        <div class="modal fade" id="loginModal" tabindex="-1">
+    <!--UPDATE USERNAME FORM-->
+    <form id="updateUsernameForm" action="index.php" method="POST">
+        <div class="modal fade" id="updateUsername" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Login :</h5>
+                        <h5 class="modal-title">Edit Username</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div>
                         <?php //Login message from PHP file! ?>
                     </div>
                     <div class="modal-body">
-                        <div class="input-group mt-3">
-                            <label class="sr-only" for="loginemail">E-mail:</label>
-                            <input type="email" class="form-control" id="loginemail" name="loginemail" placeholder="Email" maxlength="50">
-                        </div>
-                        <div class="input-group mt-3">
-                            <label class="sr-only" for="loginpassword">Password:</label>
-                            <input type="password" class="form-control" id="loginpassword" name="loginpassword" placeholder="Password" maxlength="30">
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center mt-3">
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="rememberme" name="rememberme">
-                                <label class="form-check-label" for="rememberme">Remember me</label>
-                            </div>
-                            <a data-bs-dismiss="modal" data-bs-toggle="modal" href="#forgotpasswordModal">Forgot password ?</a>
-                        </div>
-                    </div>
-                    <div class="modal-footer d-flex justify-content-between align-items-center">
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#signupModal" data-bs-dismiss="modal">Register</button>
-                        <div>
-                            <input type="submit" name="login" class="btn green" value="Login">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </form>
-
-    <!--FORGOT PASSWORD FORM-->
-    <form id="forgotpasswordform" action="index.php" method="POST">
-        <div class="modal fade" id="forgotpasswordModal" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Forgot Password ? Enter your email address :</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div>
-                        <?php //forgot password message from PHP file! ?>
-                    </div>
-                    <div class="modal-body">
-                        <div class="input-group mt-3">
-                            <label class="sr-only" for="forgotemail">E-mail:</label>
-                            <input type="email" class="form-control" id="forgotemail" name="forgotemail" placeholder="Email" maxlength="50">
-                        </div>
-                    </div>
-                    <div class="modal-footer d-flex justify-content-between align-items-center">
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#signupModal" data-bs-dismiss="modal">Register</button>
-                        <div>
-                            <input type="submit" name="forgotpassword" class="btn green" value="Submit">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </form>
-
-    <!--SIGN UP FORM-->
-    <form id="signupform" action="index.php" method="POST">
-        <div class="modal fade" id="signupModal" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Sign up today and Start using our Online Notes App!</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div>
-                        <?php //Signup message from PHP file! ?>
-                    </div>
-                    <div class="modal-body">
-                        <div class="input-group mt-3">
+                        <div class="form-group mt-3">
                             <label class="sr-only" for="username">Username:</label>
-                            <input type="text" class="form-control" id="username" name="username" placeholder="username" maxlength="30">
+                            <input type="text" class="form-control" id="username" name="username" value="username value" maxlength="50">
                         </div>
-                        <div class="input-group mt-3">
-                            <label class="sr-only" for="email">E-mail:</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" maxlength="50">
+                    </div>
+                    <div class="modal-footer d-flex justify-content-end align-items-center">
+                        <div>
+                            <input type="submit" name="updateUsername" class="btn green" value="Submit">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!--UPDATE EMAIL FORM-->
+    <form id="updateEmailForm" action="index.php" method="POST">
+        <div class="modal fade" id="updateEmail" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Enter new email</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div>
+                        <?php //Login message from PHP file! ?>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group mt-3">
+                            <label class="sr-only" for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="example: joankouloumba@yahoo.fr" maxlength="30">
                         </div>
-                        <div class="input-group mt-3">
+                    </div>
+                    <div class="modal-footer d-flex justify-content-end align-items-center">
+                        <div>
+                            <input type="submit" name="updateUsername" class="btn green" value="Submit">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!--UPDATE PASSWORD FORM-->
+    <form id="updatePasswordForm" action="index.php" method="POST">
+        <div class="modal fade" id="updatePassword" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Enter Current and New password</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div>
+                        <?php //Login message from PHP file! ?>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group mt-3">
+                            <label class="sr-only" for="currentPassword">Your current password:</label>
+                            <input type="password" class="form-control" id="currentPassword" name="currentPassword" placeholder="Your current password" maxlength="30">
+                        </div>
+                        <div class="form-group mt-3">
                             <label class="sr-only" for="password">Choose a password:</label>
                             <input type="password" class="form-control" id="password" name="password" placeholder="Choose a password" maxlength="30">
                         </div>
-                        <div class="input-group mt-3">
-                            <label class="sr-only" for="password2">Confirm password:</label>
-                            <input type="password" class="form-control" id="password2" name="password2" placeholder="Confirm password" maxlength="30">
+                        <div class="form-group mt-3">
+                            <label class="sr-only" for="confirmPassword">Confirm password:</label>
+                            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" maxlength="30">
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <input type="submit" name="signup" class="btn green" value="Sign up">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <div class="modal-footer d-flex justify-content-end align-items-center">
+                        <div>
+                            <input type="submit" name="updateUsername" class="btn green" value="Submit">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        </div> 
                     </div>
                 </div>
             </div>

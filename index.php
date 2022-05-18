@@ -26,7 +26,7 @@
       <!--NAVIGATION-->
       <nav role="navigation" class="navbar navbar-expand-md navbar-light fixed-top">
           <div class="container-fluid">
-                <a class="navbar-brand" href="./php/mainpage.php">Online Notes</a>
+                <a class="navbar-brand" href="./vue/mainpage.php">Online Notes</a>
                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                      <span class="navbar-toggler-icon"></span>
                  </button>
@@ -51,7 +51,7 @@
     </div>
 
     <!--LOGIN FORM-->
-    <form id="loginform" action="indes.php" method="POST">
+    <form id="loginform" action="index.php" method="POST">
         <div class="modal fade" id="loginModal" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -63,11 +63,11 @@
                         <?php //Login message from PHP file! ?>
                     </div>
                     <div class="modal-body">
-                        <div class="input-group mt-3">
+                        <div class="form-group mt-3">
                             <label class="sr-only" for="loginemail">E-mail:</label>
                             <input type="email" class="form-control" id="loginemail" name="loginemail" placeholder="Email" maxlength="50">
                         </div>
-                        <div class="input-group mt-3">
+                        <div class="form-group mt-3">
                             <label class="sr-only" for="loginpassword">Password:</label>
                             <input type="password" class="form-control" id="loginpassword" name="loginpassword" placeholder="Password" maxlength="30">
                         </div>
@@ -105,7 +105,7 @@
                         <?php //forgot password message from PHP file! ?>
                     </div>
                     <div class="modal-body">
-                        <div class="input-group mt-3">
+                        <div class="form-group mt-3">
                             <label class="sr-only" for="forgotemail">E-mail:</label>
                             <input type="email" class="form-control" id="forgotemail" name="forgotemail" placeholder="Email" maxlength="50">
                         </div>
@@ -136,19 +136,19 @@
                         <?php //Signup message from PHP file! ?>
                     </div>
                     <div class="modal-body">
-                        <div class="input-group mt-3">
+                        <div class="form-group mt-3">
                             <label class="sr-only" for="username">Username:</label>
                             <input type="text" class="form-control" id="username" name="username" placeholder="username" maxlength="30">
                         </div>
-                        <div class="input-group mt-3">
+                        <div class="form-group mt-3">
                             <label class="sr-only" for="email">E-mail:</label>
                             <input type="email" class="form-control" id="email" name="email" placeholder="Email" maxlength="50">
                         </div>
-                        <div class="input-group mt-3">
+                        <div class="form-group mt-3">
                             <label class="sr-only" for="password">Choose a password:</label>
                             <input type="password" class="form-control" id="password" name="password" placeholder="Choose a password" maxlength="30">
                         </div>
-                        <div class="input-group mt-3">
+                        <div class="form-group mt-3">
                             <label class="sr-only" for="password2">Confirm password:</label>
                             <input type="password" class="form-control" id="password2" name="password2" placeholder="Confirm password" maxlength="30">
                         </div>
