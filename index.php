@@ -51,7 +51,7 @@
     </div>
 
     <!--LOGIN FORM-->
-    <form id="loginform" action="index.php" method="POST">
+    <form id="loginForm" action="index.php" method="POST">
         <div class="modal fade" id="loginModal" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -59,7 +59,7 @@
                         <h5 class="modal-title">Login :</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div>
+                    <div id="loginMessage">
                         <?php //Login message from PHP file! ?>
                     </div>
                     <div class="modal-body">
@@ -76,7 +76,7 @@
                                 <input type="checkbox" class="form-check-input" id="rememberme" name="rememberme">
                                 <label class="form-check-label" for="rememberme">Remember me</label>
                             </div>
-                            <a data-bs-dismiss="modal" data-bs-toggle="modal" href="#forgotpasswordModal">Forgot password ?</a>
+                            <a data-bs-dismiss="modal" data-bs-toggle="modal" href="#forgotPasswordModal">Forgot password ?</a>
                         </div>
                     </div>
                     <div class="modal-footer d-flex justify-content-between align-items-center">
@@ -93,15 +93,15 @@
     </form>
 
     <!--FORGOT PASSWORD FORM-->
-    <form id="forgotpasswordform" action="index.php" method="POST">
-        <div class="modal fade" id="forgotpasswordModal" tabindex="-1">
+    <form id="forgotPasswordForm" action="index.php" method="POST">
+        <div class="modal fade" id="forgotPasswordModal" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">Forgot Password ? Enter your email address :</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div>
+                    <div id="forgotMessage">
                         <?php //forgot password message from PHP file! ?>
                     </div>
                     <div class="modal-body">
@@ -124,7 +124,7 @@
     </form>
 
     <!--SIGN UP FORM-->
-    <form id="signupform" action="index.php" method="POST">
+    <form id="signupForm"  method="POST">
         <div class="modal fade" id="signupModal" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -132,9 +132,7 @@
                         <h5 class="modal-title">Sign up today and Start using our Online Notes App!</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div>
-                        <?php //Signup message from PHP file! ?>
-                    </div>
+                    <div id="signupMessage"><!--Signup message from PHP file!--></div>
                     <div class="modal-body">
                         <div class="form-group mt-3">
                             <label class="sr-only" for="username">Username:</label>
@@ -193,8 +191,12 @@
         </p>
       </div>
     </footer>
-
+    
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!--jQuery CDN-->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!--script-->
+    <script src="./JS/index.js"></script>
   </body>
 </html>

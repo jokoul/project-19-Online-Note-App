@@ -170,3 +170,12 @@ textarea {
   cursor: pointer;
 }
 /*=========================PROFILE PAGE STYLE END===============================================*/
+/*=========================ACTIVATION PAGE STYLE START===============================================*/
+.activation {
+  border: 3px solid #499cc7;
+  border-radius: 2rem;
+}
+.activation h1 {
+  color: #499cc7;
+}
+/*=========================ACTIVATION PAGE STYLE END===============================================*/
