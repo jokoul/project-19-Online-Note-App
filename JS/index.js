@@ -17,7 +17,7 @@ $("#signupForm").submit(function (event) {
     success: function (data) {
       //if the call success
       if (data) {
-        $("#signupMessage").html(data);
+        $("#signupMessage").html(data); //here we define where all "echo" from signup.php have to appear
       }
     },
     error: function () {
@@ -39,6 +39,8 @@ $("#loginForm").submit(function (event) {
     success: function (data) {
       if (data == "success") {
         window.location = "../vue/mainpage.php";
+      } else {
+        $("#loginMessage").html(data); //data (means "echo message") return by the login.php will appear in the "#loginMessage" element.
       }
     },
   });

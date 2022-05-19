@@ -1,3 +1,11 @@
+<?php
+//before using session variable
+session_start();
+//redirect if no session
+if(!isset($_SESSION['user_id'])){
+  header('Location: ../index.php');
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -32,14 +40,14 @@
                  </button>
             <div class="navbar-collapse colapse d-md-flex justify-content-between mt-2" id="navbarSupportedContent">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="./profile.php">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../profile.php">Profile</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Help</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
                     <li class="nav-item"><a class="nav-link active" href="#">My Notes</a></li>
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="#" >Logged in as <b>username</b></a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.php" >Log out</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.php?logout=1" >Log out</a></li>
                 </ul>
             </div>
           </div>
