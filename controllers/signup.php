@@ -58,6 +58,7 @@ $resultMessage="";
 if($errors){
     $resultMessage = '<div class="alert alert-danger"> ' . $errors . '</div>';
     echo $resultMessage;
+    exit;
 }
 //no errors
 //Prepare variables for the queries

@@ -61,7 +61,7 @@ include('./controllers/remember.php');
     </div>
 
     <!--LOGIN FORM-->
-    <form id="loginForm" action="index.php" method="POST">
+    <form id="loginForm"  method="POST">
         <div class="modal fade" id="loginModal" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -103,7 +103,7 @@ include('./controllers/remember.php');
     </form>
 
     <!--FORGOT PASSWORD FORM-->
-    <form id="forgotPasswordForm" action="index.php" method="POST">
+    <form id="forgotPasswordForm"  method="POST">
         <div class="modal fade" id="forgotPasswordModal" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content">

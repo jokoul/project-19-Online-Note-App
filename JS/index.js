@@ -43,5 +43,29 @@ $("#loginForm").submit(function (event) {
         $("#loginMessage").html(data); //data (means "echo message") return by the login.php will appear in the "#loginMessage" element.
       }
     },
+    error: function () {
+      $("#loginMessage").html(
+        '<div class="alert alert-danger">There was an error with the Ajax Call. Please try again later.</div>'
+      );
+    },
+  });
+});
+//AJAX call for the forgot password form
+//Once the form is submitted
+$("#forgotPasswordForm").submit(function (event) {
+  event.preventDefault();
+  var dataToPost = $(this).serializeArray();
+  $.ajax({
+    url: "../controllers/forgot-password.php",
+    type: "POST",
+    data: dataToPost,
+    success: function (data) {
+      $("#forgotMessage").html(data);
+    },
+    error: function () {
+      $("#forgotMessage").html(
+        '<div class="alert alert-danger">There was an error with the Ajax Call. Please try again later.</div>'
+      );
+    },
   });
 });
