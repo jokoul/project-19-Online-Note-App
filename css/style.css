@@ -25,7 +25,7 @@ body {
 
 /*NAVBAR STYLE*/
 .navbar {
-  background-color: #62abcf1e;
+  background-color: #62abcf00;
   border: 2px solid #499cc7;
   color: white;
 }
@@ -142,7 +142,8 @@ footer div {
 }
 #allNotes,
 #done,
-#notePad {
+#notePad,
+.delete {
   display: none;
 }
 textarea {
@@ -155,6 +156,34 @@ textarea {
   color: #8c119a;
   background-color: azure;
   padding: 0.5rem;
+}
+.noteContainer {
+  border: 3px solid rgb(76, 76, 76);
+  border-radius: 0.5rem;
+  background: linear-gradient(#ffffff, #eceae7);
+  background: -webkit-linear-gradient(#ffffff, #eceae7);
+  background: -o-linear-gradient(#ffffff, #eceae7);
+  background: -moz-linear-gradient(#ffffff, #eceae7);
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-top: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.noteContainer:hover {
+  border-color: #499cc7;
+}
+.noteText {
+  font-weight: 800;
+  font-size: 20px;
+  overflow: hidden;
+  white-space: nowrap; /*to cut sentence longer than box content*/
+  text-overflow: ellipsis; /*To add 3 points at the end of cutted sentence.*/
+}
+.noteDate {
+  font-size: 0.8rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 /*=========================MAINPAGE STYLE END===============================================*/
 /*=========================PROFILE PAGE STYLE START===============================================*/

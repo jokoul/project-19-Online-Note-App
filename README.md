@@ -2,7 +2,7 @@
 
 ## description
 
-This app allow to take notes easily, it keeps notes store on cloud safely and available to users everywhere.
+This app allow to take notes easily, it keeps notes stored on cloud safely and available to users everywhere. I used many features like signup/login with activation token and confirmation email. I used User Account management with session variable, CRUD operation on the Notes and data persistence with cookies.
 
 ## stack
 

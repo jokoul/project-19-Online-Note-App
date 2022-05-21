@@ -46,7 +46,7 @@ if(!isset($_SESSION['user_id'])){
                     <li class="nav-item"><a class="nav-link active" href="#">My Notes</a></li>
                 </ul>
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#" >Logged in as <b>username</b></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" >Logged in as <b><?php echo $_SESSION['username'] ?></b></a></li>
                     <li class="nav-item"><a class="nav-link" href="../index.php?logout=1" >Log out</a></li>
                 </ul>
             </div>
@@ -54,28 +54,33 @@ if(!isset($_SESSION['user_id'])){
       </nav>
     
     <!--CONTAINER-->
-    <div class="container allContainer" >
-    <div class="row">
-        <div class=" offset-md-2 col-md-8 col-12">
-            <div class="buttons d-flex justify-content-between mb-3">
-                <div>
-                    <button type="button" id="addNote" class="btn btn-lg btn-info">Add Note</button>
-                    <button type="button" id="allNotes" class="btn btn-lg btn-info">All Notes</button>
-                </div>
-                <div>
+    <div class="container allContainer">
+      <div id="alert" class="alert alert-danger alert-dismissible collapse" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <!--Alert message from PHP file-->
+        <p id="alertContent"></p>
+      </div>
+      <div class="row">
+          <div class=" offset-md-2 col-md-8 col-12">
+              <div class="buttons d-flex justify-content-between mb-3">
+                  <div>
+                      <button type="button" id="addNote" class="btn btn-lg btn-info">Add Note</button>
+                      <button type="button" id="allNotes" class="btn btn-lg btn-info">All Notes</button>
+                  </div>
+                  <div>
 
-                    <button type="button" id="done" class="btn btn-lg green doneBtn">Done</button>
-                    <button type="button" id="edit" class="btn btn-lg btn-info">Edit</button>
-                </div>
-            </div>
-            <div id="notePad" class="mb-3">
-                <textarea rows="10"></textarea>
-            </div>
-            <div id="notes" class="notes">
-                <!--AJAX call to a php file to populate note div with notes-->
-            </div>
-        </div>
-    </div>
+                      <button type="button" id="done" class="btn btn-lg green doneBtn">Done</button>
+                      <button type="button" id="edit" class="btn btn-lg btn-info">Edit</button>
+                  </div>
+              </div>
+              <div id="notePad" class="mb-3">
+                  <textarea rows="10"></textarea>
+              </div>
+              <div id="notes" class="notes">
+                  <!--AJAX call to a php file to populate note div with notes-->
+              </div>
+          </div>
+      </div>
     </div>    
 
     <!--FOOTER-->
@@ -112,5 +117,9 @@ if(!isset($_SESSION['user_id'])){
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!--jQuery CDN-->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!--script-->
+    <script src="../JS/mynotes.js"></script>
   </body>
 </html>
