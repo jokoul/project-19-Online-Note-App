@@ -1,11 +1,13 @@
 <?php
 session_start();
 
-include('./model/connection.php');
+include('model/connection.php');
 //logout
-include('./controllers/logout.php');
+include('controllers/logout.php');
+//delete Account
+include('controllers/delete-user-redirect.php');
 //remember me
-include('./controllers/remember.php');
+include('controllers/remember.php');
 ?>
 
 <!doctype html>
@@ -36,15 +38,14 @@ include('./controllers/remember.php');
       <!--NAVIGATION-->
       <nav role="navigation" class="navbar navbar-expand-md navbar-light fixed-top">
           <div class="container-fluid">
-                <a class="navbar-brand" href="./vue/mainpage.php">Online Notes</a>
+                <a class="navbar-brand" href="vue/mainpage.php">Online Notes</a>
                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                      <span class="navbar-toggler-icon"></span>
                  </button>
             <div class="navbar-collapse colapse d-md-flex justify-content-between mt-2" id="navbarSupportedContent">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Help</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.php">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://joan-kouloumba.in/professional-site/html/contact.php" target="_blank">Contact</a></li>
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="#loginModal" data-bs-toggle="modal">Login</a></li>
@@ -207,6 +208,6 @@ include('./controllers/remember.php');
     <!--jQuery CDN-->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <!--script-->
-    <script src="./JS/index.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>

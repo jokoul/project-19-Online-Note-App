@@ -79,7 +79,7 @@ if(!$result){
 }
 $results = mysqli_num_rows($result);//this method return the number of rows
 if($results){
-    echo '<div>That username is already registered.Do you want to log in ?</div>';
+    echo '<div class="alert alert-danger">That username is already registered.Do you want to log in ?</div>';
     exit;
 }
 //If email exists in the user table print error
@@ -92,7 +92,7 @@ if(!$result){
 }
 $results = mysqli_num_rows($result);//this method return the number of rows
 if($results){
-    echo '<div>That email is already registered.Do you want to log in ?</div>';
+    echo '<div class="alert alert-danger">That email is already registered.Do you want to log in ?</div>';
     exit;
 }
 //Create a unique activation code by converting binary to hexadecimal (and each character have an hexadecimal number).
