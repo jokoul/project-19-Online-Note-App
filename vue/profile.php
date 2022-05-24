@@ -1,3 +1,23 @@
+<?php
+session_start();
+if(!isset($_SESSION['user_id'])){
+    header('Location: ../index.php');
+}
+include('../model/connection.php');
+$user_id = $_SESSION['user_id'];
+// var_dump($user_id);
+//get username and email
+$sql = "SELECT * FROM users WHERE `user_id`='$user_id'";
+$result = mysqli_query($link,$sql);
+$count = mysqli_num_rows($result);
+if($count == 1){
+   $row = mysqli_fetch_array($result,MYSQLI_ASSOC);//transform an sql table entry (line) to a associative array line=[field=>value,...]
+   $username = $row['username'];
+   $email = $row['email']; 
+}else{
+    echo "There was an error retrieving the username and email from the database.";
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -32,14 +52,13 @@
                  </button>
             <div class="navbar-collapse colapse d-md-flex justify-content-between mt-2" id="navbarSupportedContent">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="./profile.php">Profile</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Help</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="./mainpage.php">My Notes</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="./profile.php">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://joan-kouloumba.in/professional-site/html/contact.php" target="_blank">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./mainpage.php">My Notes</a></li>
                 </ul>
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#" >Logged in as <b>username</b></a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.php" >Log out</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" >Logged in as <b><?php echo $username ?></b></a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.php?logout=1" >Log out</a></li>
                 </ul>
             </div>
           </div>
@@ -48,29 +67,35 @@
     
     <div class="table-responsive container allContainer">
         <div class="row">
-        <div class="profile offset-md-2 col-md-8 col-12 p-3 rounded">  
-            <h1>General Account Settings</h1>
-            <table class="table table-hover table-condensed table-bordered">
-                <tr data-bs-target="#updateUsername" data-bs-toggle="modal">
-                    <td>Username</td>
-                    <td>Value</td>
-                </tr>
-                <tr data-bs-target="#updateEmail" data-bs-toggle="modal">
-                    <td>Email</td>
-                    <td>Value</td>
-                </tr>
-                <tr data-bs-target="#updatePassword" data-bs-toggle="modal">
-                    <td>Password</td>
-                    <td>hidden</td>
-                </tr>
-            </table>
+            <div class="profile offset-md-2 col-md-8 col-12 p-3 rounded">  
+                <h1>General Account Settings</h1>
+                <table class="table table-hover table-condensed table-bordered">
+                    <tr data-bs-target="#updateUsername" data-bs-toggle="modal">
+                        <td>Username</td>
+                        <td><?php echo $username; ?></td>
+                    </tr>
+                    <tr data-bs-target="#updateEmail" data-bs-toggle="modal">
+                        <td>Email</td>
+                        <td><?php echo $email; ?></td>
+                    </tr>
+                    <tr data-bs-target="#updatePassword" data-bs-toggle="modal">
+                        <td>Password</td>
+                        <td>hidden</td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
+    <div class="container mt-3">
+        <div id="deleteAccountMessage"><!--Fill by php echo --></div>
+        <form id="deleteAccountForm" data="<?php echo $user_id; ?>" method="POST" class="col-6 offset-md-2">
+            <input type="submit" name="deleteAccount" class="btn btn-lg btn-danger deleteUser" value="Delete my account">
+        </form>
     </div>
     
 
     <!--UPDATE USERNAME FORM-->
-    <form id="updateUsernameForm" action="index.php" method="POST">
+    <form id="updateUsernameForm" method="POST">
         <div class="modal fade" id="updateUsername" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -78,13 +103,13 @@
                         <h5 class="modal-title">Edit Username</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div>
-                        <?php //Login message from PHP file! ?>
+                    <div id="updateUsernameMessage">
+                        <?php //Update username message from PHP file! ?>
                     </div>
                     <div class="modal-body">
                         <div class="form-group mt-3">
                             <label class="sr-only" for="username">Username:</label>
-                            <input type="text" class="form-control" id="username" name="username" value="username value" maxlength="50">
+                            <input type="text" class="form-control" id="username" name="username" value="<?php echo $username; ?>" maxlength="50">
                         </div>
                     </div>
                     <div class="modal-footer d-flex justify-content-end align-items-center">
@@ -107,13 +132,13 @@
                         <h5 class="modal-title">Enter new email</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div>
-                        <?php //Login message from PHP file! ?>
+                    <div id="updateEmailMessage">
+                        <?php //update email message from PHP file! ?>
                     </div>
                     <div class="modal-body">
                         <div class="form-group mt-3">
                             <label class="sr-only" for="email">Email:</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="example: joankouloumba@yahoo.fr" maxlength="30">
+                            <input type="email" class="form-control" id="email" name="email" value="<?php echo $email; ?>" maxlength="50">
                         </div>
                     </div>
                     <div class="modal-footer d-flex justify-content-end align-items-center">
@@ -136,7 +161,7 @@
                         <h5 class="modal-title">Enter Current and New password</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div>
+                    <div id="updatePasswordMessage">
                         <?php //Login message from PHP file! ?>
                     </div>
                     <div class="modal-body">
@@ -198,5 +223,9 @@
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!--jQuery CDN-->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!--script-->
+    <script src="../js/profile.js"></script>
   </body>
 </html>

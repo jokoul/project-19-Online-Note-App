@@ -40,13 +40,12 @@ if(!isset($_SESSION['user_id'])){
                  </button>
             <div class="navbar-collapse colapse d-md-flex justify-content-between mt-2" id="navbarSupportedContent">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="../profile.php">Profile</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Help</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#">My Notes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="profile.php">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://joan-kouloumba.in/professional-site/html/contact.php" target="_blank">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="mainpage.php">My Notes</a></li>
                 </ul>
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#" >Logged in as <b><?php echo $_SESSION['username'] ?></b></a></li>
+                    <li class="nav-item"><a class="nav-link" href="profile.php" >Logged in as <b><?php echo $_SESSION['username'] ?></b></a></li>
                     <li class="nav-item"><a class="nav-link" href="../index.php?logout=1" >Log out</a></li>
                 </ul>
             </div>
@@ -120,6 +119,6 @@ if(!isset($_SESSION['user_id'])){
     <!--jQuery CDN-->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <!--script-->
-    <script src="../JS/mynotes.js"></script>
+    <script src="../js/mynotes.js"></script>
   </body>
 </html>
