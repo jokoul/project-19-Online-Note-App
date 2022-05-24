@@ -72,7 +72,7 @@ if(!isset($_SESSION['user_id'])){
                       <button type="button" id="edit" class="btn btn-lg btn-info">Edit</button>
                   </div>
               </div>
-              <div id="notePad" class="mb-3">
+              <div id="notePad" class="notePad">
                   <textarea rows="10"></textarea>
               </div>
               <div id="notes" class="notes">

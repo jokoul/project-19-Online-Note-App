@@ -120,7 +120,7 @@ footer div {
   }
   footer div {
     margin-left: 0;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
   }
 }
 /* =============================HOME STYLE END================================================================*/
@@ -202,6 +202,9 @@ textarea {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+.notePad {
+  margin-bottom: 25rem;
 }
 /*=========================MAINPAGE STYLE END===============================================*/
 /*=========================PROFILE PAGE STYLE START===============================================*/
